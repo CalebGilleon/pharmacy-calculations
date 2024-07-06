@@ -17,6 +17,7 @@ def index():
             script_info = get_directions(sig_codes, days_supply)
             directions = script_info[0]
             days_supply = int(script_info[1])
+            quantity = int(quantity)
         except (ValueError, ZeroDivisionError):
             days_supply = "Invalid input. Please check the values entered."
     return render_template('index.html', quantity=quantity, directions=directions, days_supply=days_supply)
