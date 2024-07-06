@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Calculations</title>
+    <link rel='stylesheet' type='text/css' href='static/style.css' />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pharmacy Days Supply Calculator</h1>
+        <form method="POST">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <label for="directions">Directions:</label>
+            <input type="text" id="directions" name="directions" required>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if days_supply is not none %}
+            <h2>Quantity: {{ quantity }}
+            <h2>Directions: {{ directions }}</h2>
+            <h2>Days Supply: {{ days_supply }}</h2>
+        {% endif %}
+    </div>
+
+    <script src='static/script.js'></script>
+</body>
+</html>
