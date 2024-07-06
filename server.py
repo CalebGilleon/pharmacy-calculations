@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    quantity = None
+    directions = None
     days_supply = None
     if request.method == 'POST':
         try:
